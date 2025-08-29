@@ -1,0 +1,39 @@
+# Compiled object files
+*.o
+*.obj
+*.lo
+*.la
+*.lai
+*.slo
+
+# Compiled binary files
+*.out
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Build directories
+build/
+bin/
+dist/
+out/
+
+# Debug files
+*.dSYM/
+*.pdb
+*.mod
+
+# Logs
+*.log
+
+# Editor/OS files
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# Coverage / test
+coverage/
+.pytest_cache/
+

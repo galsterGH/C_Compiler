@@ -19,7 +19,7 @@ class Lexer {
   public:
     char ProcessNextChar();
     char PeekChar();
-    void PushChar(char toPush);
+    void PushChar(char character_to_push);
 };
 
 };  // namespace Compiler

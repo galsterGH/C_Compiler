@@ -9,7 +9,7 @@ class ICompiler
 {
 public:
     virtual ~ICompiler(){};
-    virtual void SetCompilerPosition(const Position &pos) = 0;
+    virtual void SetCompilerPosition(const Position &source_position) = 0;
 };
 
 

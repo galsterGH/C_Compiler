@@ -41,8 +41,8 @@ class Token {
 
   public:
     template <AllowedTokenType T>
-    Token(TokenType tt, int f, T tp, bool iws)
-        : tokenType(tt), flags(f), types(tp), isWhiteSpace(iws) {}
+    Token(TokenType token_type, int token_flags, T token_value, bool is_whitespace)
+        : tokenType(token_type), flags(token_flags), types(token_value), isWhiteSpace(is_whitespace) {}
 
     ~Token() = default;
 

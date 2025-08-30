@@ -14,8 +14,8 @@ class Position {
 
   public:
     Position() = default;
-    Position(uint32_t ln, uint32_t cn, const std::string &fn)
-        : lineNumber(ln), colNumber(cn), fileName(fn) {}
+    Position(uint32_t line_number, uint32_t column_number, const std::string &file_name)
+        : lineNumber(line_number), colNumber(column_number), fileName(file_name) {}
 
     Position(const Position &other) = default;
     Position(Position &&other) = default;

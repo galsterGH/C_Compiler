@@ -14,8 +14,8 @@ class Compiler : public ICompiler{
 
     public:
 
-        void SetCompilerPosition(const Position &pos) override{
-            position = pos;
+        void SetCompilerPosition(const Position &source_position) override{
+            position = source_position;
         }
 
         Compiler() = default;

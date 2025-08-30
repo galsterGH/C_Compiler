@@ -2,6 +2,10 @@
 
 C compiler implementation in C++. This repo is scaffolded with a standard compiler layout, CMake configuration, and VS Code integration for building, running, debugging, and testing.
 
+## Course Reference
+
+This project is based on the **"Developing a C Compiler From Scratch - Module 1"** course by **Daniel McCarthy** on Udemy. The original course materials and examples are written in C, but this implementation is being developed in C++ using modern C++20 features including concepts, smart pointers, and RAII patterns.
+
 ## Requirements
 
 - CMake 3.22+

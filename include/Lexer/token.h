@@ -27,13 +27,13 @@ class Token {
         NUMBER,
         STRING,
         COMMENT,
-        NEwLINE
+        NEWLINE
     };
 
   private:
-    enum TokenType tokenType;
+    TokenType tokenType;
     int flags;
-    std::variant<char, std::string, uint16_t, uint32_t, uint64_t, std::any> types;
+    std::variant<char, std::string, uint16_t, uint32_t, uint64_t, std::any> tokenValue;
     Position tokenPos;
 
     bool isWhiteSpace;
@@ -42,7 +42,7 @@ class Token {
   public:
     template <AllowedTokenType T>
     Token(TokenType token_type, int token_flags, T token_value, bool is_whitespace)
-        : tokenType(token_type), flags(token_flags), types(token_value), isWhiteSpace(is_whitespace) {}
+        : tokenType(token_type), flags(token_flags), tokenValue(token_value), isWhiteSpace(is_whitespace) {}
 
     ~Token() = default;
 

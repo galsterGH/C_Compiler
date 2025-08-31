@@ -3,6 +3,7 @@
 #define _UTILS_H_
 
 #include <cstdint>
+#include <string>
 
 namespace Compiler{
 

@@ -1,5 +1,5 @@
-#ifndef LEXER_H
-#define LEXER_H
+#ifndef _LEXER_H_
+#define _LEXER_H_
 
 #include <cstdint>
 #include <memory>
@@ -33,4 +33,4 @@ class Lexer {
 
 };  // namespace Compiler
 
-#endif  // LEXER_H
+#endif  // _LEXER_H_

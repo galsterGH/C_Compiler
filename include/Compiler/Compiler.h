@@ -1,7 +1,9 @@
+#ifndef _COMPILER_H_
+#define _COMPILER_H_
+
 #include <fstream>
 #include "Utils.h"
 #include "ICompiler.h"
-
 
 namespace Compiler{
 class Compiler : public ICompiler{
@@ -42,4 +44,6 @@ class Compiler : public ICompiler{
         Compiler& operator=(const Compiler &other) = default;
         Compiler& operator=(Compiler && other) = default;
 };
-};
+};  // namespace Compiler
+
+#endif  // _COMPILER_H_

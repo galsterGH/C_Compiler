@@ -5,20 +5,22 @@
 #include <memory>
 #include "Utils.h"
 #include "Lexer/token.h"
-#include "Compiler/ICompiler.h"
 
 namespace Compiler {
+
+//forward declaration of ICompiler
+class ICompiler;
 
 class Lexer {
   private:
 
     Position position;
     uint32_t currentExpressionCount;
-    std::shared_ptr<ICompiler> compiler;  
+    ICompiler *compiler;  
 
   public:
 
-    Lexer(std::shared_ptr<ICompiler> comp):compiler(comp){}
+    Lexer(ICompiler *comp);
     Lexer(const Lexer& other) = default;
     Lexer(Lexer&& other) = default;
     ~Lexer() = default;

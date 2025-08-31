@@ -1,9 +1,13 @@
 
 #include <fstream>
+#include "icompiler.h"
 #include "Lexer/lexer.h"
 #include "Utils.h"
 
 namespace Compiler{
+
+    Lexer::Lexer(ICompiler *comp):compiler(comp){}
+
     auto Lexer::ProcessNextChar() -> char{
         auto position = compiler->GetCurrentPosition();
         position.SetColNumber(position.GetColNumber() + 1);

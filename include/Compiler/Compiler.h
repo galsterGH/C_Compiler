@@ -2,27 +2,37 @@
 #define _COMPILER_H_
 
 #include <fstream>
+#include <memory>
 #include "Utils.h"
-#include "ICompiler.h"
+#include "icompiler.h"
 
 namespace Compiler{
+
+class Lexer;
+
 class Compiler : public ICompiler{
 
     public: 
-        enum class CompilerResults { COMPILER_FAILE_COMPILED_OK, COMPILER_FAILED_WITH_ERRORS };
+        enum class CompilerResults { COMPILER_COMPILED_OK, COMPILER_FAILED_WITH_ERRORS };
 
     private:
         int compileFlags;
         Position position;
         CompilerResults result;
         std::ifstream file;
+        std::unique_ptr<Lexer> lexer;
 
     public:
 
         Compiler() = default;
-        Compiler(const std::string &fileName):file(fileName.c_str()){
-            position.SetFileName(fileName);
-        }
+        Compiler(const std::string &fileName);
+
+        ~Compiler() override = default;
+        Compiler(const Compiler& other) = default;
+        Compiler(Compiler &&other) = default;
+
+        Compiler& operator=(const Compiler &other) = default;
+        Compiler& operator=(Compiler && other) = default;
 
         void SetPosition(const Position &source_position) override{
             position = source_position;
@@ -36,13 +46,8 @@ class Compiler : public ICompiler{
             return file;
         }
 
-
-        ~Compiler() override = default;
-        Compiler(const Compiler& other) = default;
-        Compiler(Compiler &&other) = default;
-
-        Compiler& operator=(const Compiler &other) = default;
-        Compiler& operator=(Compiler && other) = default;
+        //Compiler method
+        CompilerResults Compile();
 };
 };  // namespace Compiler
 

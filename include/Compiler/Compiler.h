@@ -1,5 +1,7 @@
+#include <fstream>
 #include "Utils.h"
 #include "ICompiler.h"
+
 
 namespace Compiler{
 class Compiler : public ICompiler{
@@ -11,14 +13,28 @@ class Compiler : public ICompiler{
         int compileFlags;
         Position position;
         CompilerResults result;
+        std::ifstream file;
 
     public:
 
-        void SetCompilerPosition(const Position &source_position) override{
+        Compiler() = default;
+        Compiler(const std::string &fileName):file(fileName.c_str()){
+            position.SetFileName(fileName);
+        }
+
+        void SetPosition(const Position &source_position) override{
             position = source_position;
         }
 
-        Compiler() = default;
+        Position GetCurrentPosition() const override{
+            return position;
+        }
+
+        std::ifstream& GetFileStream() override{
+            return file;
+        }
+
+
         ~Compiler() override = default;
         Compiler(const Compiler& other) = default;
         Compiler(Compiler &&other) = default;

@@ -6,6 +6,8 @@
 
 namespace Compiler{
 
+#define NEW_LINE ('\n')
+
 class Position {
   private:
     uint32_t lineNumber;
@@ -22,6 +24,36 @@ class Position {
     ~Position() = default;
     Position &operator=(const Position &other) = default;
     Position &operator=(Position &&other) = default;
+    
+    // Getter
+    uint32_t GetlineNumber() const {
+        return lineNumber;
+    }
+    
+    // Setter
+    void SetlineNumber(const uint32_t& line_number) {
+        lineNumber = line_number;
+    }
+
+    // Getter
+    uint32_t GetColNumber() const {
+        return colNumber;
+    }
+    
+    // Setter
+    void SetColNumber(const uint32_t& col_number) {
+        colNumber = col_number;
+    }
+
+     // Getter
+    std::string GetFileName() const {
+        return fileName;
+    }
+    
+    // Setter
+    void SetFileName(const std::string& file_name) {
+        fileName = file_name;
+    }    
 };
 };
 

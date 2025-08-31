@@ -2,7 +2,7 @@
 #include <fstream>
 #include "compiler/icompiler.h"
 #include "lexer/lexer.h"
-#include "Utils.h"
+#include "utils.h"
 
 namespace Compiler{
 

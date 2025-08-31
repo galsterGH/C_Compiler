@@ -3,7 +3,7 @@
 
 #include <fstream>
 #include <memory>
-#include "Utils.h"
+#include "utils.h"
 #include "compiler/icompiler.h"
 
 namespace Compiler{

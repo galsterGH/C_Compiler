@@ -3,7 +3,7 @@
 
 #include <cstdint>
 #include <memory>
-#include "Utils.h"
+#include "utils.h"
 #include "lexer/token.h"
 
 namespace Compiler {

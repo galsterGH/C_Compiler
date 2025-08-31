@@ -69,7 +69,7 @@ void test_copy_assignment() {
 void test_move_assignment() {
     std::string value1 = "test1";
     std::string value2 = "test2";
-    Token t1(Token::TokenType::NEwLINE, 2, value1, true);
+    Token t1(Token::TokenType::NEWLINE, 2, value1, true);
     Token t2(Token::TokenType::IDENTIFIER, 4, value2, false);
     t2 = std::move(t1);
     std::cout << "✓ Move assignment test passed\n";
@@ -84,7 +84,7 @@ void test_all_token_types() {
     Token number(Token::TokenType::NUMBER, 0, c, false);
     Token string(Token::TokenType::STRING, 0, c, false);
     Token comment(Token::TokenType::COMMENT, 0, c, false);
-    Token newline(Token::TokenType::NEwLINE, 0, c, false);
+    Token newline(Token::TokenType::NEWLINE, 0, c, false);
     std::cout << "✓ All TokenType enum values test passed\n";
 }
 

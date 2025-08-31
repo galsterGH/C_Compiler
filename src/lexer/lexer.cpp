@@ -1,6 +1,6 @@
 
 #include <fstream>
-#include "icompiler.h"
+#include "compiler/icompiler.h"
 #include "lexer/lexer.h"
 #include "Utils.h"
 

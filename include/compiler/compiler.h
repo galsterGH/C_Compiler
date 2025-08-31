@@ -4,7 +4,7 @@
 #include <fstream>
 #include <memory>
 #include "Utils.h"
-#include "icompiler.h"
+#include "compiler/icompiler.h"
 
 namespace Compiler{
 

@@ -1,4 +1,4 @@
-#include "Lexer/token.h"
+#include "lexer/token.h"
 #include <iostream>
 #include <string>
 #include <cassert>

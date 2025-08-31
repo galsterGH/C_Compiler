@@ -1,7 +1,7 @@
 
 #include <fstream>
 #include "icompiler.h"
-#include "Lexer/lexer.h"
+#include "lexer/lexer.h"
 #include "Utils.h"
 
 namespace Compiler{

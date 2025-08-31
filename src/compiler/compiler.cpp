@@ -1,5 +1,5 @@
 #include "compiler/compiler.h"
-#include "Lexer/lexer.h"
+#include "lexer/lexer.h"
 
 namespace Compiler{
 
@@ -14,5 +14,4 @@ namespace Compiler{
         return CompilerResults::COMPILER_COMPILED_OK;
     }
 }
-
 

@@ -3,6 +3,7 @@
 
 #include <cstdint>
 #include <memory>
+#include <vector>
 #include "utils.h"
 #include "lexer/token.h"
 
@@ -16,9 +17,16 @@ class Lexer {
 
     Position position;
     uint32_t currentExpressionCount;
-    ICompiler *compiler;  
+    ICompiler *compiler;
+    std::vector<Token> tokenVector; 
+
+    char ProcessNextChar();
+    char PeekChar();
+    void PushChar(char character_to_push);
 
   public:
+
+    enum class LexResults {LEXICAL_ANALYSIS_OK, LEXICAL_ANALYSIS_ERROR};
 
     Lexer(ICompiler *comp);
     Lexer(const Lexer& other) = default;
@@ -28,9 +36,12 @@ class Lexer {
     Lexer& operator=(const Lexer& other) = default;
     Lexer& operator=(Lexer&& other) = default;
 
-    char ProcessNextChar();
-    char PeekChar();
-    void PushChar(char character_to_push);
+    // Getter
+    auto GetTokensVector() const {
+        return tokenVector;
+    }
+
+    LexResults runLex(){return LexResults::LEXICAL_ANALYSIS_OK;}
 };
 
 };  // namespace Compiler

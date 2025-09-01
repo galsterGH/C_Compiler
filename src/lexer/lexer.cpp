@@ -6,9 +6,12 @@
 
 namespace Compiler{
 
-    Lexer::Lexer(ICompiler *comp):compiler(comp){}
+    Lexer::Lexer(ICompiler *comp):compiler(comp){
+        position.SetColNumber(1);
+        position.SetlineNumber(1);
+    }
 
-    auto Lexer::ProcessNextChar() -> char{
+    auto Lexer::ProcessNextChar() -> char {
         auto position = compiler->GetCurrentPosition();
         position.SetColNumber(position.GetColNumber() + 1);
 
@@ -17,20 +20,20 @@ namespace Compiler{
 
         if(next == NEW_LINE){
             position.SetlineNumber(position.GetlineNumber() + 1);
-            position.SetColNumber(0);
+            position.SetColNumber(1);
             compiler->SetPosition(position);
         }
 
         return next;
     }
 
-    auto Lexer::PeekChar() -> char{
+    auto Lexer::PeekChar() -> char {
         char next = compiler->GetFileStream().get();
         compiler->GetFileStream().putback(next);
         return next;
     }
 
-    auto Lexer::PushChar(char character_to_push)->void{
+    auto Lexer::PushChar(char character_to_push)->void {
         compiler->GetFileStream().putback(character_to_push);
     }
 };

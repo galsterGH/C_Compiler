@@ -11,6 +11,11 @@ namespace Compiler{
     }
 
     auto Compiler::Compile() -> CompilerResults{
+
+        if(lexer->runLex() != Lexer::LexResults::LEXICAL_ANALYSIS_OK){
+            return CompilerResults::COMPILER_FAILED_WITH_ERRORS;
+        }
+        
         return CompilerResults::COMPILER_COMPILED_OK;
     }
 }

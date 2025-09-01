@@ -59,14 +59,14 @@ static void test_runLex_simple_input() {
     auto tokens = lex.GetTokensVector();
     // Implementation not done yet; ensure it's at least a vector
     assert(tokens.size() >= 0);
-    std::cout << "✓ Lexer simple input test passed\n";
+    std::cout << "Lexer simple input test passed\n";
 }
 
 int main() {
     std::cout << "Running Lexer tests...\n\n";
     test_runLex_empty_input();
     test_runLex_simple_input();
-    std::cout << "\n✅ Lexer tests completed\n";
+    std::cout << "\n Lexer tests completed\n";
     return 0;
 }
 

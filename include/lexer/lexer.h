@@ -20,6 +20,8 @@ class Lexer {
     ICompiler *compiler;
     std::vector<Token> tokenVector; 
 
+    std::optional<Token> readNextToken();
+
     char ProcessNextChar();
     char PeekChar();
     void PushChar(char character_to_push);
@@ -41,8 +43,7 @@ class Lexer {
         return tokenVector;
     }
 
-    LexResults runLex(){return LexResults::LEXICAL_ANALYSIS_OK;}
-};
+    LexResults runLex();
 
 };  // namespace Compiler
 

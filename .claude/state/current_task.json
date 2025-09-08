@@ -1,0 +1,6 @@
+{
+  "task": "m-implement-vscode-cpp-env",
+  "branch": "feature/implement-vscode-cpp-env",
+  "services": ["development-environment", "build-system", "automation-scripts"],
+  "updated": "2025-09-08"
+}
